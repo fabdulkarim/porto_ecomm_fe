@@ -15,7 +15,7 @@ class PageHome extends Component {
         list_item_carousel:[]
     }
     componentDidMount = () => {
-        axios.get("http://0.0.0.0:5000/item")
+        axios.get("https://localhost:5000/item")
         .then(response =>{
             let data = response.data
             console.log(data)
