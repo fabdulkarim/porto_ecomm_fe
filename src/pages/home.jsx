@@ -15,6 +15,8 @@ class PageHome extends Component {
         axios.get("http://0.0.0.0:5000/item")
         .then(response =>{
             let data = response.data
+            console.log(data)
+            data.sort((a,b)=> b.purchased - a.purchased)
             let data2 = data.filter((val,idx) => (
                 idx < 4
             ))
@@ -28,7 +30,7 @@ class PageHome extends Component {
                 <NavigationBar {...this.props} />
                 <Container>
                     <div className="home-item-wrapper">
-                        <h3>All Items</h3>
+                        <h3>Popular Items</h3>
                         <ItemDetail list_item={this.state.list_item_reduced}/>
                         <Button variant="secondary" onClick={() => this.props.history.push("/item") }>See All</Button>
                     </div>
