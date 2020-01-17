@@ -5,6 +5,7 @@ import axios from "axios"
 import NavigationBar from "../components/navbar"
 
 import { Container, Button, Form } from "react-bootstrap"
+import ShowOrder from "../components/orderSummary"
 
 class PageCheckOut extends Component {
     state={
@@ -74,6 +75,7 @@ class PageCheckOut extends Component {
                     <NavigationBar {...this.props} />
                     <Container>
                         <h3>Order Summary</h3>
+                        <ShowOrder qtys={this.state.list_qty} items={this.state.list_item} />
                         {/* <div className="home-item-wrapper">
                             <h3>All Items in Cart</h3>
                             <ItemDetail list_item={this.state.list_item_reduced}/>

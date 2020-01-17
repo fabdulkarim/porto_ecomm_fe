@@ -1,8 +1,6 @@
 import React, { Component } from "react"
 import { Row, Card, Col } from "react-bootstrap";
 
-import { closeImg } from "../images/close.png"
-
 class CartDisplay extends Component {
     render() {
         // console.log(this.props.list_cart.length)
