@@ -1,0 +1,10 @@
+
+.home-item-wrapper, .s-item-wrapper {
+    border: solid 1px #343a408a;
+    padding: 1%;
+    margin: 2%;
+}
+
+.home-item-wrapper .btn {
+    margin: 1% 0 0 0;
+}
