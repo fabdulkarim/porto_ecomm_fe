@@ -75,6 +75,7 @@ class PageProfile extends Component {
         return (
             <React.Fragment>
                 <NavigationBar {...this.props} />
+                <br />
                 <Container>
                     <Row>
                         <Col xs="6">

@@ -27,7 +27,7 @@ class PageQuery extends Component {
                 <NavigationBar {...this.props}/>
                 <Container>
                     <Col xs="2"></Col>
-                    <Col xs="10">
+                    <Col xs="10" className="ml-auto">
                         <ItemDisplay list_item={this.state.list_item}/>
                     </Col>
                 </Container>
