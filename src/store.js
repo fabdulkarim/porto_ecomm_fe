@@ -2,7 +2,7 @@ import createStore from 'unistore';
 import axios from 'axios';
 
 const initState = {
-
+  search:""
 };
 const urlCart = 'http://0.0.0.0:5000/cart';
 export const store = createStore(initState);
@@ -28,7 +28,9 @@ export const actions = (store) => ({
         .catch((error) => console.log(error));
     }
   },
-  removeFromCart: () => {
 
-  },
+  handleSearchChange: (e) => {
+    store.setState({[e.target.name]:e.target.value})
+  }
+  
 });

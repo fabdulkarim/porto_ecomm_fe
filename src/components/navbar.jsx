@@ -1,9 +1,16 @@
 import React, { Component } from "react";
-import { Navbar, Nav } from "react-bootstrap";
+import { Navbar, Nav, InputGroup, FormControl, Button, Row } from "react-bootstrap";
 
 import logo from "../images/running.png"
+import searchLogo from "../images/search.png"
 
 class NavigationBar extends Component {
+    navbarSearchChange = (e) => {
+
+    }
+
+    navbar
+
     handleAuthNav = input => {
         if (input === "Profile") {
             this.props.history.push("/profile")
@@ -43,7 +50,29 @@ class NavigationBar extends Component {
                 <Navbar.Toggle aria-controls="basic-navbar-nav" />
                 <Navbar.Collapse>
                     <Nav className="mx-auto">
-                        
+                        <Row className="px-10 align-items-center">
+                            <InputGroup>
+                                <FormControl
+                                placeholder="Start Typing..."
+                                aria-label="search"
+                                aria-describedby="basic-addon2"
+                                value={this.props.search}
+                                onChange={(e) => this.navbarSearchChange(e)}
+                                />
+                                {/* varying search display based on pages */}
+                                {
+                                    this.props.isQuery !== true ? (      
+                                        <InputGroup.Append>
+                                            <Button variant="outline-secondary">
+                                                <img src={searchLogo} alt="search logo" style={{ height: "20px" }} />
+                                            </Button>
+                                        </InputGroup.Append>
+                                    ) : (
+                                        <div></div>
+                                    )
+                                }
+                            </InputGroup>
+                        </Row>
                     </Nav>
                     <Nav className="ml-auto">
                         {authMenuList}

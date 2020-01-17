@@ -11,6 +11,11 @@ class PageQuery extends Component {
         list_item: [],
         search: ""
     }
+
+    navbarHandleChange = (e) => {
+        this.setState({[e.target.name]:e.target.value})
+    }
+     
     componentDidMount = () => {
         axios.get("http://0.0.0.0:5000/item")
         .then(response => {            
@@ -25,7 +30,7 @@ class PageQuery extends Component {
         console.log(this.state.list_item)
         return (
             <React.Fragment>
-                <NavigationBar {...this.props}/>
+                <NavigationBar {...this.props} search={this.state.search} isQuery={true} handleSearch={null} />
                 <Container>
                     <Col xs="2"></Col>
                     <Col xs="10" className="ml-auto">
