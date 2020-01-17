@@ -10,7 +10,9 @@ import { Container, Button } from "react-bootstrap"
 class PageHome extends Component {
     state={
         list_item_popular:[],
-        list_item_bargain:[]
+        list_item_bargain:[],
+        list_item_newest:[],
+        list_item_carousel:[]
     }
     componentDidMount = () => {
         axios.get("http://0.0.0.0:5000/item")
@@ -19,15 +21,21 @@ class PageHome extends Component {
             console.log(data)
             // sort by popular/purchase number
             data.sort((a,b)=> b.purchased - a.purchased)
-            let data2 = data.filter((val,idx) => (
+            let dataPopular = data.filter((val,idx) => (
                 idx < 4
             ))
             // sort by lowest price first
             data.sort((a,b)=> a.price - b.price)
-            let data3 = data.filter((val,idx) => (
+            let dataCheap = data.filter((val,idx) => (
                 idx < 4
             ))
-            this.setState({list_item_popular: data2, list_item_bargain:data3})
+            // sort by new/id reverse
+            data.sort((a,b)=> b.item_id - a.item_id)
+            let dataNew = data.filter((val,idx) => (
+                idx < 4
+            ))
+            let dataCarousel = [dataPopular[0], dataCheap[0], dataNew[0]]
+            this.setState({list_item_popular: dataPopular, list_item_bargain:dataCheap, list_item_newest:dataNew})
         })
         .catch(error => console.log(error))
     }
@@ -44,6 +52,11 @@ class PageHome extends Component {
                     <div className="home-item-wrapper">
                         <h3>Bargains</h3>
                         <ItemDetail list_item={this.state.list_item_bargain}/>
+                        <Button variant="secondary" onClick={() => this.props.history.push("/item") }>See All</Button>
+                    </div>
+                    <div className="home-item-wrapper">
+                        <h3>New Arrival</h3>
+                        <ItemDetail list_item={this.state.list_item_newest}/>
                         <Button variant="secondary" onClick={() => this.props.history.push("/item") }>See All</Button>
                     </div>
                 </Container>

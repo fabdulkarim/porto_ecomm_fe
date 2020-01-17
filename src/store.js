@@ -29,8 +29,12 @@ export const actions = (store) => ({
     }
   },
 
-  handleSearchChange: (e) => {
+  storeSearchChange: (state, e) => {
     store.setState({[e.target.name]:e.target.value})
+  },
+
+  emptyStoreSearch: () => {
+    store.setState({search:""})
   }
   
 });

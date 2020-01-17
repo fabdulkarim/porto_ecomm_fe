@@ -16,7 +16,7 @@ class ItemDisplay extends Component {
                 <Row>
                     {
                         this.props.list_item.map(item => (
-                            <Col xs="3">
+                            <Col xs="12" md="3">
                                 <Card bg="dark" text="white" >
                                     <Card.Body>
                                         <Link to={"/item/" + item.item_id}>
@@ -25,7 +25,6 @@ class ItemDisplay extends Component {
                                         <div className="d-flex justify-content-center">
                                             <Button variant="secondary" onClick={()=>this.props.pushToCart(token,item.item_id)}>Add to Cart</Button>
                                         </div>
-
                                     </Card.Body>
                                     <Card.Header>{item.name}</Card.Header>
                                 </Card>

@@ -4,12 +4,15 @@ import { Navbar, Nav, InputGroup, FormControl, Button, Row } from "react-bootstr
 import logo from "../images/running.png"
 import searchLogo from "../images/search.png"
 
+//using store actions for DEFAULT search feature
+import { withRouter, Link } from "react-router-dom"
+import { connect } from "unistore/react"
+import { actions } from "../store"
+
 class NavigationBar extends Component {
-    navbarSearchChange = (e) => {
-
-    }
-
-    navbar
+    // navbarSearchChange = (e) => {
+    //     this.props.isQuery == true ? this.props.handleSearch(e) : (e) => this.props.storeSearchChange(e)
+    // }
 
     handleAuthNav = input => {
         if (input === "Profile") {
@@ -57,15 +60,19 @@ class NavigationBar extends Component {
                                 aria-label="search"
                                 aria-describedby="basic-addon2"
                                 value={this.props.search}
-                                onChange={(e) => this.navbarSearchChange(e)}
+                                onChange={
+                                    e => this.props.handleSearch(e)
+                                }
                                 />
                                 {/* varying search display based on pages */}
                                 {
                                     this.props.isQuery !== true ? (      
                                         <InputGroup.Append>
-                                            <Button variant="outline-secondary">
-                                                <img src={searchLogo} alt="search logo" style={{ height: "20px" }} />
-                                            </Button>
+                                            <Link to={"/item"}>
+                                                <Button variant="outline-secondary">
+                                                    <img className="search-logo" src={searchLogo} alt="search logo" style={{ height: "20px" }} />
+                                                </Button>
+                                            </Link>
                                         </InputGroup.Append>
                                     ) : (
                                         <div></div>
@@ -83,4 +90,4 @@ class NavigationBar extends Component {
     }
 } 
 
-export default NavigationBar;
+export default connect(actions)(withRouter(NavigationBar));
