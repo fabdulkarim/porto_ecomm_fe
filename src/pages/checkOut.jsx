@@ -44,13 +44,16 @@ class PageCheckOut extends Component {
                 "Authorization": "Bearer " + token
             }
         }
+        let items = this.state.list_item
+        console.log(items)
         let qtys = this.state.list_qty
         let alamat_kirim = this.state.alamat_kirim
         let arr = []
+        // ada bug karena salah ngerti id untuk bagian di bawah ini
         for(const i in qtys){
-            let numi = parseInt(i)
-            arr.push({id:(numi + 1), quant:qtys[i]})
+            arr.push({id:items[i].item_id, quant:qtys[i]})
         }
+        console.log(arr)
         const data = {
             quantity:arr,
             alamat_kirim: alamat_kirim
