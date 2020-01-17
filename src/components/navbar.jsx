@@ -42,6 +42,9 @@ class NavigationBar extends Component {
                 </Nav>
                 <Navbar.Toggle aria-controls="basic-navbar-nav" />
                 <Navbar.Collapse>
+                    <Nav className="mx-auto">
+                        
+                    </Nav>
                     <Nav className="ml-auto">
                         {authMenuList}
                     </Nav>

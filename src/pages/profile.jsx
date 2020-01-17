@@ -92,7 +92,7 @@ class PageProfile extends Component {
                                     </Form.Group>
                                     <Form.Group controlId="formBasicPassword">
                                         <Form.Label>password</Form.Label>
-                                        <Form.Control type="password" placeholder="password" name="password" onChange={e => this.handleChange(e)}/>
+                                        <Form.Control type="password" placeholder="password" name="password" onChange={e => this.handleChange(e)} required/>
                                     </Form.Group>
                                     <Form.Group controlId="formBasicAddress">
                                         <Form.Label>alamat kirim</Form.Label>

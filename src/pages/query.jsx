@@ -8,7 +8,8 @@ import ItemDisplay from "../components/itemGet"
 
 class PageQuery extends Component {
     state = {
-        list_item: []
+        list_item: [],
+        search: ""
     }
     componentDidMount = () => {
         axios.get("http://0.0.0.0:5000/item")
