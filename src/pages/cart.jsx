@@ -5,6 +5,7 @@ import axios from "axios"
 import NavigationBar from "../components/navbar"
 import { Container, Button, Col, Row } from "react-bootstrap"
 import CartDisplay from "../components/cartShow"
+import ShowOrder from "../components/orderSummary"
 
 class PageCart extends Component {
     state = {
@@ -104,8 +105,10 @@ class PageCart extends Component {
                             <Col xs="3">
                                 <br />
                                 {
-                                    cart.length === 0 ? <div></div> : <Button variant="secondary" onClick={()=>this.goToCheckOut()}>Proceed</Button>
+                                    cart.length === 0 ? <div></div> : <Button variant="secondary" onClick={()=>this.goToCheckOut()} className="ml-auto">Proceed</Button>
                                 }
+                                <br />
+                                <ShowOrder qtys={this.state.cart_item_qty} items={this.state.cart_item_data}/>
                             </Col>
                         </Row>
                     </Container>
