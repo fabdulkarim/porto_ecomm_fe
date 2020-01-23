@@ -24,10 +24,18 @@ class PageLogin extends Component {
         axios.post("http://0.0.0.0:5000/login", data)
         .then(response => {
             if (response.status==200){
+                //console.log(response.data)
                 localStorage.setItem("token", response.data.token);
-                console.log(response.data)
-                alert("login berhasil")
-                this.props.history.push("/")
+                if (response.data.is_admin === "true") {
+                    console.log("Masuk kondisi")
+                    // only set isAdmin because token already set
+                    localStorage.setItem("isAdmin", "true");
+                    this.props.history.push("/admin");
+                } else {
+                    //console.log(response.data)
+                    alert("login berhasil")
+                    this.props.history.push("/")
+                }
             }
         })
         .catch(error => console.log(error))

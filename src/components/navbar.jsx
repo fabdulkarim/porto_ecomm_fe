@@ -42,7 +42,22 @@ class NavigationBar extends Component {
             )
         })
         console.log(logo)
-        return (
+        if (localStorage.getItem("isAdmin") === "true") {
+            return (
+                <Navbar expand="lg" bg="dark" variant="dark">
+                    <Nav>
+                        <Navbar.Brand className="mr-auto">
+                            <img src={logo} width="100" height="100" className="d-inline-block align-center" alt="logo KBHM" onClick={() =>  {
+                                localStorage.removeItem("isAdmin");
+                                this.handleAuthNav("Logout");
+                            }
+                                } />
+                            <span>KBHM Athletics -- Admin Page</span>
+                        </Navbar.Brand>
+                    </Nav>
+                </Navbar>
+            )
+        } else return (
             <Navbar expand="lg" bg="dark" variant="dark" >
                 <Nav>
                     <Navbar.Brand className="mr-auto">

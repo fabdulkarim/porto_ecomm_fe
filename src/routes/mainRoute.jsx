@@ -11,6 +11,7 @@ import PageQuery from "../pages/query";
 import PageCart from "../pages/cart";
 import PageProfile from "../pages/profile";
 import PageCheckOut from "../pages/checkOut";
+import PageAdmin from "../pages/admin";
 
 const MainRoute = () => {
     return (
@@ -22,6 +23,9 @@ const MainRoute = () => {
                     <Route exact path="/signup" component={PageSignUp}></Route>
                     <Route exact path="/item" component={PageQuery}></Route>
                     <Route exact path="/cart" component={PageCart}></Route>
+                    <Route exact path="/admin" component={PageAdmin} onLeave={() => {
+                        localStorage.removeItem("isAdmin")
+                    }}></Route>
                     <Route exact path="/checkout" component={PageCheckOut} onLeave={()=>{
                         localStorage.removeItem("qty");
                         localStorage.removeItem("list_item")

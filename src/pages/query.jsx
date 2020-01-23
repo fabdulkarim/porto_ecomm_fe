@@ -57,7 +57,7 @@ class PageQuery extends Component {
         console.log(this.state.list_item)
         return (
             <React.Fragment>
-                <NavigationBar {...this.props} search={this.state.search} isQuery={true} handleSearch={this.navbarHandleChange} />
+                <NavigationBar {...this.props} search={this.state.search} handleSearch={this.navbarHandleChange} />
                 <Container>
                     <Col xs="12" md="2"></Col>
                     <Col xs="12" md="10" className="ml-auto">
