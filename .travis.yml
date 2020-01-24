@@ -39,4 +39,4 @@ deploy:
 #limit on branch deploy
 #check re-run
 ##gogogo
-###retry after rebuild secret with apply -f
+###retry after rebuild secret with apply -f go
