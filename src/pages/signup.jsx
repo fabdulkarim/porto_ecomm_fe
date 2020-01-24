@@ -1,7 +1,7 @@
 import { Form, Button, Container } from "react-bootstrap"
 import React, { Component } from "react"
 import NavigationBar from "../components/navbar"
-import { Redirect } from "react-router-dom"
+//import { Redirect } from "react-router-dom"
 
 import axios from "axios"
 
@@ -28,7 +28,7 @@ class PageSignUp extends Component {
         }
         axios.post("http://0.0.0.0:5000/daftar", data)
         .then(response => {
-            if (response.status==200){
+            if (response.status===200){
                 console.log(response.data)
                 alert("Pendaftaran Sukses!")
                 this.props.history.push("/login")

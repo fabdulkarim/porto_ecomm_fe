@@ -23,7 +23,7 @@ class PageLogin extends Component {
         }
         axios.post("http://0.0.0.0:5000/login", data)
         .then(response => {
-            if (response.status==200){
+            if (response.status===200){
                 //console.log(response.data)
                 localStorage.setItem("token", response.data.token);
                 if (response.data.is_admin === "true") {

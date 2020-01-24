@@ -1,5 +1,5 @@
 import React from 'react';
-import logo from './logo.svg';
+//import logo from './logo.svg';
 import './App.css';
 // import PageHome from './pages/home';
 import MainRoute from './routes/mainRoute';

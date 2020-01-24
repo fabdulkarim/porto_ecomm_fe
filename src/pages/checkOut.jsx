@@ -60,7 +60,7 @@ class PageCheckOut extends Component {
         }
         axios.post("http://0.0.0.0:5000/buynow", data, config)
         .then(response => {
-            if (response.status==200){
+            if (response.status===200){
                 console.log(response.data)
                 alert("Order Placed!")
                 this.props.history.push("/profile")
@@ -70,7 +70,7 @@ class PageCheckOut extends Component {
     }
 
     render () {
-        if (localStorage.getItem("list_item")==undefined) {
+        if (localStorage.getItem("list_item")===undefined) {
             return <Redirect to={{ pathname:"/" }}/>
         } else {
             return (

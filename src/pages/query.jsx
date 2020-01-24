@@ -2,7 +2,7 @@ import React, { Component } from "react"
 import axios from "axios"
 
 import NavigationBar from "../components/navbar"
-import { Container, Col, Button, Card } from "react-bootstrap"
+import { Container, Col } from "react-bootstrap"
 
 //using/checking store for search
 import { withRouter } from "react-router-dom"

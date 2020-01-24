@@ -43,7 +43,7 @@ class PageCart extends Component {
         axios.delete("http://0.0.0.0:5000/cart/" + cart_id, config)
         .then(response => {
             for(const i in cart){
-                if (cart[i].id == cart_id){
+                if (cart[i].id === cart_id){
                     cart.splice(i,1)
                     data2.splice(i,1)
                     qty.splice(i,1)
@@ -90,7 +90,7 @@ class PageCart extends Component {
         const data2 = this.state.cart_item_data;
         let qty = this.state.cart_item_qty;
         //console.log(qty)
-        if (localStorage.getItem("token")==undefined) {
+        if (localStorage.getItem("token")===undefined) {
             return <Redirect to={{ pathname:"/" }}/>
         } else {
             return (

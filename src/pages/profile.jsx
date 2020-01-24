@@ -37,7 +37,7 @@ class PageProfile extends Component {
         console.log(data)
         axios.put("http://0.0.0.0:5000/daftar", data, config)
         .then(response => {
-            if (response.status==200){
+            if (response.status===200){
                 console.log(response.data)
                 alert("Pembaruan Data Sukses!")
                 this.reload()

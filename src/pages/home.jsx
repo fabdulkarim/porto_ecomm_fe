@@ -34,7 +34,7 @@ class PageHome extends Component {
             let dataNew = data.filter((val,idx) => (
                 idx < 4
             ))
-            let dataCarousel = [dataPopular[0], dataCheap[0], dataNew[0]]
+            // let dataCarousel = [dataPopular[0], dataCheap[0], dataNew[0]]
             this.setState({list_item_popular: dataPopular, list_item_bargain:dataCheap, list_item_newest:dataNew})
         })
         .catch(error => console.log(error))

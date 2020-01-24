@@ -32,7 +32,7 @@ class NavigationBar extends Component {
     }}
     
     render() {
-        const authMenu = (localStorage.getItem("token")!=undefined) ? ["Cart","Profile","Logout"]
+        const authMenu = (localStorage.getItem("token")!==undefined) ? ["Cart","Profile","Logout"]
         : ["Login","Signup"]
         const authMenuList = authMenu.map(elem => {
             return (

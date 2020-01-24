@@ -10,7 +10,7 @@ export const store = createStore(initState);
 export const actions = (store) => ({
   pushToCart: (...restArgument) => {
     // console.warn(restArgument)
-    if (restArgument[0] == undefined) {
+    if (restArgument[0] === undefined) {
       alert('Please Login First');
     } else {
       const config = {
