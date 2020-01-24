@@ -33,7 +33,7 @@ class PageSingle extends Component {
                 <Container>
                     <Row className="s-item-wrapper">
                         <Col xs="8">
-                            <img src={this.state.item_data.photo} style={{ width:"100%"}} alt="product photo"></img>
+                            <img src={this.state.item_data.photo} style={{ width:"100%"}} alt="product description"></img>
                         </Col>
                         <Col xs="4">
                             <Card border="dark">
