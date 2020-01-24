@@ -62,7 +62,7 @@ class NavigationBar extends Component {
                 <Nav>
                     <Navbar.Brand className="mr-auto">
                         <img src={logo} width="100" height="100" className="d-inline-block align-center" alt="logo KBHM" onClick={() => this.handleAuthNav("Home")} />
-                        <span>KBHM Athletics</span>
+                        <span>KBHM Sports</span>
                     </Navbar.Brand>
                 </Nav>
                 <Navbar.Toggle aria-controls="basic-navbar-nav" />
